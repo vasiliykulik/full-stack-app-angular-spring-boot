@@ -1,5 +1,6 @@
 package com.linkedin.learning.rest;
 
+import com.linkedin.learning.model.response.ReservationResponse;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,7 +16,7 @@ import java.time.LocalDate;
  * Created by Vasiliy Kylik(Rocket) on 06.03.2018.
  */
 @RestController
-@RequestMapping("/room/reservation/v1")
+@RequestMapping(ResourceConstants.ROOM_RESERVATION_V1)
 public class ReservationResource {
 
   @RequestMapping(path="", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
