@@ -8,14 +8,14 @@ import org.springframework.core.convert.converter.Converter;
 /**
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
  */
-public class RoomEntityToReservableRoomResponseConverter implements Converter<RoomEntity, ReservableRoomResponse> {
+public class RoomEntityToReservableRoomResponseConverter implements Converter<RoomEntity, ReservableRoomResponse>{
 
   @Override
   public ReservableRoomResponse convert(RoomEntity source) {
 
     ReservableRoomResponse reservationResponse = new ReservableRoomResponse();
     reservationResponse.setRoomNumber(source.getRoomNumber());
-    reservationResponse.setPrice(Integer.valueOf(source.getPrice()));
+    reservationResponse.setPrice( Integer.valueOf(source.getPrice()) );
 
     Links links = new Links();
     Self self = new Self();
@@ -26,4 +26,8 @@ public class RoomEntityToReservableRoomResponseConverter implements Converter<Ro
 
     return reservationResponse;
   }
+
+
+
 }
+
