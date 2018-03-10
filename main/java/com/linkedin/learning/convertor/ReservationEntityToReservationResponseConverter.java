@@ -10,8 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
  */
-public class ReservationEntityToReservationResponseConverter extends Converter<ReservationEntity, ReservationResponse> {
-
+public class ReservationEntityToReservationResponseConverter implements Converter<ReservationEntity, ReservationResponse> {
 
   @Override
   public ReservationResponse convert(ReservationEntity source) {
@@ -19,6 +18,9 @@ public class ReservationEntityToReservationResponseConverter extends Converter<R
     ReservationResponse reservationResponse = new ReservationResponse();
     reservationResponse.setCheckin(source.getCheckin());
     reservationResponse.setCheckout(source.getCheckout());
+
+    if (null != source.getRoomEntity())
+      reservationResponse.setId(source.getRoomEntity().getId());
 
     return reservationResponse;
   }

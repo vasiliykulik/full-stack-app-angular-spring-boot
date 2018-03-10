@@ -7,23 +7,25 @@ import java.time.LocalDate;
  */
 public class ReservationResponse {
 
-  private Long Id;
+  private Long id;
   private LocalDate checkin;
   private LocalDate checkout;
 
+  public ReservationResponse() {
+  }
+
   public ReservationResponse(Long id, LocalDate checkin, LocalDate checkout) {
-    super();
-    Id = id;
+    this.id = id;
     this.checkin = checkin;
     this.checkout = checkout;
   }
 
   public Long getId() {
-    return Id;
+    return id;
   }
 
   public void setId(Long id) {
-    Id = id;
+    this.id = id;
   }
 
   public LocalDate getCheckin() {
