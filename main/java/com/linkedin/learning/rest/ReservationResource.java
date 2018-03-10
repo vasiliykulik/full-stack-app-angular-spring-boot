@@ -1,5 +1,6 @@
 package com.linkedin.learning.rest;
 
+
 import com.linkedin.learning.convertor.RoomEntityToReservableRoomResponseConverter;
 import com.linkedin.learning.entity.ReservationEntity;
 import com.linkedin.learning.entity.RoomEntity;
@@ -18,7 +19,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 
@@ -42,13 +49,11 @@ public class ReservationResource {
   @Autowired
   ConversionService conversionService;
 
-  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-  public Page<ReservableRoomResponse> getAvailableRooms(
-
+  @RequestMapping(path ="", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public Page<ReservableRoomResponse> getAvailableRooms (
           @RequestParam(value = "checkin")
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                   LocalDate checkin,
-
           @RequestParam(value = "checkout")
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                   LocalDate checkout, Pageable pageable) {

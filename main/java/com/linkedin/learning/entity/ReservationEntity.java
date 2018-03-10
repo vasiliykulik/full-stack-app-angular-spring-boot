@@ -15,7 +15,7 @@ public class ReservationEntity {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  @NotNull
+
   @NotNull
   private LocalDate checkin;
 
@@ -29,7 +29,7 @@ public class ReservationEntity {
     super();
   }
 
-  public ReservationEntity(@NotNull @NotNull LocalDate checkin, @NotNull LocalDate checkout) {
+  public ReservationEntity(@NotNull LocalDate checkin, @NotNull LocalDate checkout) {
     this.checkin = checkin;
     this.checkout = checkout;
   }

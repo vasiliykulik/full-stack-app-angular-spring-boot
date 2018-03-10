@@ -3,7 +3,7 @@ package com.linkedin.learning.convertor;
 import com.linkedin.learning.entity.ReservationEntity;
 import com.linkedin.learning.model.request.ReservationRequest;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.lang.Nullable;
+
 
 /**
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
