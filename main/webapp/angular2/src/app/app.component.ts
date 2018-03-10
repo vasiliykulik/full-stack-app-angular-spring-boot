@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class AppComponent implements OnInit {
 
-  public submitted: boolean;
-  roomsearch: FormGroup;
+  public submitted:boolean;
+  roomsearch : FormGroup;
   rooms: Room[];
 
   ngOnInit() {
@@ -21,12 +21,13 @@ export class AppComponent implements OnInit {
     this.rooms = ROOMS;
   }
 
-  onSubmit({value, valid}: { value: Roomsearch, valid: boolean }) {
+  onSubmit({value,valid}: {value:Roomsearch, valid:boolean}) {
     console.log(value);
   }
 
+
   reserveRoom(value:string){
-    console.log("Room id for reservation:");
+    console.log("Room id for reservation:" + value);
   }
 }
 
