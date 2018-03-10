@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
  */
 @Entity
-@Table(name="Room")
+@Table(name = "Room")
 public class RoomEntity {
 
   @Id
@@ -19,6 +19,10 @@ public class RoomEntity {
 
   @NotNull
   private String price;
+
+  public Long getId() {
+    return id;
+  }
 
   public RoomEntity() {
     super();
