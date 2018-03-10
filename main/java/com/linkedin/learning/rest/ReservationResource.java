@@ -42,11 +42,13 @@ public class ReservationResource {
   @Autowired
   ConversionService conversionService;
 
-  @RequestMapping(path ="", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-  public Page<ReservableRoomResponse> getAvailableRooms (
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public Page<ReservableRoomResponse> getAvailableRooms(
+
           @RequestParam(value = "checkin")
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                   LocalDate checkin,
+
           @RequestParam(value = "checkout")
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                   LocalDate checkout, Pageable pageable) {
