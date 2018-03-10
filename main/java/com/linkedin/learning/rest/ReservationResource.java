@@ -2,7 +2,6 @@ package com.linkedin.learning.rest;
 
 import com.linkedin.learning.model.request.ReservationRequest;
 import com.linkedin.learning.model.response.ReservationResponse;
-import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
