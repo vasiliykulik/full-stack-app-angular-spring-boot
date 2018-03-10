@@ -2,18 +2,18 @@ package com.linkedin.learning.convertor;
 import com.linkedin.learning.entity.RoomEntity;
 import com.linkedin.learning.model.Links;
 import com.linkedin.learning.model.Self;
-import com.linkedin.learning.model.response.ReservationResponse;
+import com.linkedin.learning.model.response.ReservableRoomResponse;
 import com.linkedin.learning.rest.ResourceConstants;
 import org.springframework.core.convert.converter.Converter;
 /**
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
  */
-public class RoomEntityToReservationResponseConverter implements Converter<RoomEntity, ReservationResponse> {
+public class RoomEntityToReservableRoomResponseConverter implements Converter<RoomEntity, ReservableRoomResponse> {
 
   @Override
-  public ReservationResponse convert(RoomEntity source) {
+  public ReservableRoomResponse convert(RoomEntity source) {
 
-    ReservationResponse reservationResponse = new ReservationResponse();
+    ReservableRoomResponse reservationResponse = new ReservableRoomResponse();
     reservationResponse.setRoomNumber(source.getRoomNumber());
     reservationResponse.setPrice(Integer.valueOf(source.getPrice()));
 

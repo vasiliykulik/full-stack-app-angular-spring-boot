@@ -2,6 +2,8 @@ package com.linkedin.learning.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Vasiliy Kylik on(Rocket) on 10.03.2018.
@@ -19,6 +21,9 @@ public class RoomEntity {
 
   @NotNull
   private String price;
+
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+  private List<ReservationEntity> reservationEntityList;
 
   public Long getId() {
     return id;
@@ -48,4 +53,20 @@ public class RoomEntity {
   public void setPrice(String price) {
     this.price = price;
   }
+
+  public List<ReservationEntity> getReservationEntityList() {
+    return reservationEntityList;
+  }
+
+  public void setReservationEntityList(List<ReservationEntity> reservationEntityList) {
+    this.reservationEntityList = reservationEntityList;
+  }
+
+  public void addReservationEntity(ReservationEntity reservationEntity){
+    if(null == reservationEntityList)
+      reservationEntityList = new ArrayList<>();
+
+    reservationEntityList.add(reservationEntity);
+  }
+
 }
